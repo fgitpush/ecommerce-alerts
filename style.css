@@ -1,0 +1,32 @@
+.ffs_valid{
+    height: 15px;
+    border-radius: 10px;
+    width: 15px;
+    display: inline-block;
+    float: left;
+    margin: 4px;
+    background: green;
+}
+.ffs_invalid{
+    height: 15px;
+    border-radius: 10px;
+    width: 15px;
+    display: inline-block;
+    float: left;
+    margin: 4px;
+    background: red;
+}
+.ffs_pause{
+    height: 15px;
+    border-radius: 10px;
+    width: 15px;
+    display: inline-block;
+    float: left;
+    margin: 4px;
+    background: #dddddd;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
