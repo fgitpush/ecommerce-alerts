@@ -21,8 +21,6 @@ function plugin_options_page() {
 <h2>WooCommerce Heartbeat</h2>
 Measure your eCommerce site
 <form method="post" action="options.php"> 
-<?php // settings_fields( 'plugin_options_validate' );?>
-<?php  // do_settings_sections( 'plugin_options_validate' );?>
 
 <table>
   <tr>
@@ -40,14 +38,11 @@ Measure your eCommerce site
 	<td><?php echo get_option('page_view'); ?></td>
 	<td>
 		<input type="number" name="page_view_number"  value="<?php echo get_option('page_view_expiry_int_part'); ?>" >
-		<?php ffs_select("page_view",get_option('page_view_expiry_s_h_m_d_y')); ?>
-		
+		<?php ffs_select("page_view",get_option('page_view_isactive')); ?>
 	</td>
 	<td>
-	<select>
-	  <option value="yes">Yes</option>
-	  <option value="no">No</option>
-	</select>
+	<?php ffs_select_active("page_view",get_option('page_view_isactive')); ?>
+
 	</td>
   </tr>
   <tr>
@@ -62,10 +57,7 @@ Measure your eCommerce site
 		
 	</td>
 	<td>
-	<select>
-	  <option value="yes">Yes</option>
-	  <option value="no">No</option>
-	</select>
+	<?php ffs_select_active("single_product",get_option('single_product_isactive')); ?>
 	</td>
 	
   </tr>
@@ -79,10 +71,7 @@ Measure your eCommerce site
 		<?php ffs_select("checkout",get_option('checkout_expiry_s_h_m_d_y')); ?>
 	</td>
 	<td>
-	<select>
-	  <option value="yes">Yes</option>
-	  <option value="no">No</option>
-	</select>
+	<?php ffs_select_active("checkout",get_option('checkout_isactive')); ?>
 	</td>
   </tr>
   <tr>
@@ -95,10 +84,7 @@ Measure your eCommerce site
 		<?php ffs_select("coupon",get_option('coupon_expiry_s_h_m_d_y')); ?>
 	</td>
 	<td>
-	<select>
-	  <option value="yes">Yes</option>
-	  <option value="no">No</option>
-	</select>
+	<?php ffs_select_active("coupon",get_option('coupon_isactive')); ?>
 	</td>
   </tr>
   <tr>
@@ -111,10 +97,7 @@ Measure your eCommerce site
 		<?php ffs_select("cart",get_option('cart_expiry_s_h_m_d_y')); ?>
 	</td>
 	<td>
-	<select>
-	  <option value="yes">Yes</option>
-	  <option value="no">No</option>
-	</select>
+	<?php ffs_select_active("cart",get_option('cart_isactive')); ?>
 	</td>
   </tr>
   <tr>
@@ -127,10 +110,7 @@ Measure your eCommerce site
 		<?php ffs_select("orders",get_option('orders_expiry_s_h_m_d_y')); ?>
 	</td>
 	<td>
-	<select>
-	  <option value="yes">Yes</option>
-	  <option value="no">No</option>
-	</select>
+	<?php ffs_select_active("orders",get_option('orders_isactive')); ?>
 	</td>
   </tr>
 </table>
@@ -141,23 +121,21 @@ Measure your eCommerce site
 }?>
 
 <?php // add the admin settings and such
-add_action('admin_init', 'plugin_admin_init');
-
+//add_action('admin_init', 'plugin_admin_init');
+/*
 function plugin_admin_init(){
-register_setting( 'plugin_options', 'plugin_options', 'plugin_options_validate' );
-//register_setting('bp-settings-group', 'bp_options', 'bp_options_sanitize');
-//add_settings_section('plugin_main', 'Main Settings', 'plugin_options_validate', 'plugin');
-//add_settings_field('plugin_text_string', 'Plugin Text Input', 'plugin_options_validate', 'plugin', 'plugin_main');
+	register_setting( 'plugin_options', 'plugin_options', 'plugin_options_validate' );
 }
+*/
 
 function plugin_options_validate(){
-	
 	$ffs_mapping= array("page_view", "single_product", "checkout", "coupon", "cart", "orders");
 	foreach ($ffs_mapping as $item)
     {
-		//echo $item."<br>";
+		//echo $item."<br> validate <br> ";
         ffs_add_data_db($item);
         sendthemail($item);
     }
 }
+
 ?>

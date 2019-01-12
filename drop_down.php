@@ -21,4 +21,22 @@ function ffs_select($name, $selected){
 	}
 		
 }
+
+function ffs_select_active($name, $selected){
+	?>
+	<select name="<?php echo $name ?>_isactive">
+
+	<?php
+	$ffs_select_mapping= array("Yes", "No");
+	foreach($ffs_select_mapping as $item)
+	{
+		$ffs_value_option= "value='".$item."'";
+		if($item == $selected)
+			$ffs_value_option=$ffs_value_option.' selected="selected"';
+		?>
+		<option <?php echo $ffs_value_option; ?>> <?php echo $item ?></option>
+		<?php
+	}
+		
+}
 ?>

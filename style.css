@@ -16,14 +16,14 @@
     margin: 4px;
     background: red;
 }
-.ffs_pause{
+.ffs_isactive{
     height: 15px;
     border-radius: 10px;
     width: 15px;
     display: inline-block;
     float: left;
     margin: 4px;
-    background: #dddddd;
+    background: black;
 }
 td, th {
     border: 1px solid #dddddd;
