@@ -3,7 +3,7 @@
 4.Gets Coupon code used count
 */
 
-function ffs_coupon() {
+function woo_alerts_waffs_coupon() {
 	$coupon=0;
 	if(get_option('coupon'))
 	{
@@ -14,14 +14,14 @@ function ffs_coupon() {
 	$coupon++;
 	$time = get_the_time('G:i:s');
 	/*
-	$ffs_to="ifahaduddin@gmail.com";
+	$woo_alerts_waffs_to="ifahaduddin@gmail.com";
 	$subject = "Site Report";
 	$message = "Coupon applied";
-	wp_mail( $ffs_to, $subject, $message);
+	wp_mail( $woo_alerts_waffs_to, $subject, $message);
 	*/
 	update_option( 'coupon',$coupon);
 	update_option( 'coupon_last',$time);
 }
 
-add_action( 'woocommerce_applied_coupon', 'ffs_coupon' );
+add_action( 'woocommerce_applied_coupon', 'woo_alerts_waffs_coupon' );
 ?>

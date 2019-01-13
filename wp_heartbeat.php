@@ -1,8 +1,4 @@
 <?php
-/**
- * @package wp-heartbeat
- * @version 1.0
- */
 /*
 Plugin Name: WooAlerts
 Plugin URI: 

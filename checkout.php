@@ -3,7 +3,7 @@
 3. Gets Checkout page count
 */
 
-function ffs_user_checkout() {
+function woo_alerts_waffs_user_checkout() {
 	$checkout=0;
 	if(get_option('checkout'))
 	{
@@ -14,15 +14,15 @@ function ffs_user_checkout() {
 	$checkout++;
 	$time = date('h:i:s');
 	/*
-	$ffs_to="ifahaduddin@gmail.com";
+	$woo_alerts_waffs_to="ifahaduddin@gmail.com";
 	$subject = "Site Report";
 	$message = "Checkout";
-	wp_mail( $ffs_to, $subject, $message);
+	wp_mail( $woo_alerts_waffs_to, $subject, $message);
 	*/
 	update_option( 'checkout',$checkout);
 	update_option( 'checkout_last',$time);
 }
 
-add_action( 'woocommerce_before_checkout_billing_form', 'ffs_user_checkout' );
+add_action( 'woocommerce_before_checkout_billing_form', 'woo_alerts_waffs_user_checkout' );
 
 ?>

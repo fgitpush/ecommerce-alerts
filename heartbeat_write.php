@@ -1,6 +1,6 @@
 <?php
 /*
-function ffs_heart_write($item) {
+function woo_alerts_waffs_heart_write($item) {
 	$count=0;
 	if(get_option($item))
 	{
@@ -11,10 +11,10 @@ function ffs_heart_write($item) {
 	$count++;
 	$time = get_the_time('G:i:s');
 	
-	$ffs_to="ifahaduddin@gmail.com";
+	$woo_alerts_waffs_to="";
 	$subject = "Site Report";
 	$message = "Page View";
-	wp_mail( "ifahaduddin@gmail.com", $subject, $message);
+	wp_mail( "", $subject, $message);
 	
 	update_option( $item,$count);
 	update_option( $item.'_last',$time);

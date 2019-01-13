@@ -1,4 +1,4 @@
-.ffs_valid{
+.woo_alerts_waffs_valid{
     height: 15px;
     border-radius: 10px;
     width: 15px;
@@ -7,7 +7,7 @@
     margin: 4px;
     background: green;
 }
-.ffs_invalid{
+.woo_alerts_waffs_invalid{
     height: 15px;
     border-radius: 10px;
     width: 15px;
@@ -16,7 +16,7 @@
     margin: 4px;
     background: red;
 }
-.ffs_isactive{
+.woo_alerts_waffs_isactive{
     height: 15px;
     border-radius: 10px;
     width: 15px;

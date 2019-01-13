@@ -4,37 +4,37 @@
 */
 
 
-function ffs_select($name, $selected){
+function woo_alerts_waffs_select_time($name, $selected){
 	?>
 	<select name="<?php echo $name ?>_other_time">
 
 	<?php
-	$ffs_select_mapping= array("seconds", "minutes", "hours", "days", "weeks");
-	foreach($ffs_select_mapping as $item)
+	$woo_alerts_waffs_select_mapping= array("seconds", "minutes", "hours", "days", "weeks");
+	foreach($woo_alerts_waffs_select_mapping as $item)
 	{
-		$ffs_value_option= "value='".$item."'";
+		$woo_alerts_waffs_value_option= "value='".$item."'";
 		if($item == $selected)
-			$ffs_value_option=$ffs_value_option.' selected="selected"';
+			$woo_alerts_waffs_value_option=$woo_alerts_waffs_value_option.' selected="selected"';
 		?>
-		<option <?php echo $ffs_value_option; ?>> <?php echo $item ?></option>
+		<option <?php echo $woo_alerts_waffs_value_option; ?>> <?php echo $item ?></option>
 		<?php
 	}
 		
 }
 
-function ffs_select_active($name, $selected){
+function woo_alerts_waffs_select_active($name, $selected){
 	?>
 	<select name="<?php echo $name ?>_isactive">
 
 	<?php
-	$ffs_select_mapping= array("Yes", "No");
-	foreach($ffs_select_mapping as $item)
+	$woo_alerts_waffs_select_mapping= array("Yes", "No");
+	foreach($woo_alerts_waffs_select_mapping as $item)
 	{
-		$ffs_value_option= "value='".$item."'";
+		$woo_alerts_waffs_value_option= "value='".$item."'";
 		if($item == $selected)
-			$ffs_value_option=$ffs_value_option.' selected="selected"';
+			$woo_alerts_waffs_value_option=$woo_alerts_waffs_value_option.' selected="selected"';
 		?>
-		<option <?php echo $ffs_value_option; ?>> <?php echo $item ?></option>
+		<option <?php echo $woo_alerts_waffs_value_option; ?>> <?php echo $item ?></option>
 		<?php
 	}
 		
