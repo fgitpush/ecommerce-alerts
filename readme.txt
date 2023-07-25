@@ -1,4 +1,4 @@
-=== Woo Alerts ===
+=== Ecommerce Alerts ===
 Contributors: FahadUddin92
 Stable tag: 1.0
 Tested up to: 5.0
